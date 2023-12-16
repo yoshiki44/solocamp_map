@@ -1,0 +1,22 @@
+<h1>アカウント設定</h1>
+<h3>プロフィール</h3>
+  <table>
+    <tr>
+      <th>画像</th>
+      <th>名前</th>
+    </tr>
+
+    <tr>
+      <td><%= image_tag current_user.icon.url if current_user.icon? %></td>
+      <td><%= current_user.name %></td>
+    </tr>
+  </table>
+
+  <div>
+    <%= link_to "編集", edit_user_registration_path %>
+  </div>
+
+  <div>
+    <%= link_to "アカウント", "/users/acount" %>
+    <%= link_to "プロフィール", "/users/profile" %>
+  </div>

@@ -1,0 +1,7 @@
+<% if current_user.own?(post) %>
+   <div class='mr10 float-right'>
+      <%= render 'crud_menus', post: post %>
+<% else %>
+     <%= render 'bookmarks/bookmark', post: post %>
+   </div>
+<% end %>

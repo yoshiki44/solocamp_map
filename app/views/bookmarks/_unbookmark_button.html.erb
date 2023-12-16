@@ -1,0 +1,3 @@
+<%= link_to bookmark_path(current_user.bookmarks.find_by(post_id: @post.id)), id: "js-bookmark-button-for-post-#{post.id}", method: :delete do %>
+  <%= fa_icon("star-o") %>
+<% end %>

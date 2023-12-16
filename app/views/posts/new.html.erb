@@ -1,0 +1,49 @@
+<section class="page-section clearfix">
+    <div class="container">
+        <div class="intro">
+            <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper">新規投稿</span>
+              </h2>
+
+              <%= form_with url: posts_path  do |f| %>
+                <div class ="field">
+                  <%= f.text_field :title, placeholder: "タイトル", class: 'form-control' %>
+                </div>
+
+                <div class ="field">
+                  <%= f.date_field :date, placeholder: "日付", class: 'form-control' %>
+                </div>
+
+                <div class ="field">
+                  <%= f.text_field :city, placeholder: "所在地", class: 'form-control' %>
+                </div>
+
+                <div class ="field">
+                  <%= f.text_field :field_name, placeholder: "キャンプ場", class: 'form-control' %>
+                </div>
+
+                <div class ="field">
+                  <%= f.text_area :details, placeholder: "詳細", class: 'form-control', size: "20x10" %>
+                </div>
+
+                <div class ="field">
+                  <%= f.file_field :image, placeholder: "画像選択", class: 'form-control' %>
+                </div>
+
+                <div class ="field">
+                  <%= f.submit "登録する", class: 'sign-btn' %>
+                </div>
+
+              <% end %>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer text-faded text-center py-5">
+  <div class="container"><p class="m-0 small">Copyright &copy; Your Website 2023</p></div>
+</footer>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>

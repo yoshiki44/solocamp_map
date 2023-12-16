@@ -1,0 +1,48 @@
+<section class="page-section clearfix">
+  <div class="container">
+    <div class="intro">
+      <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+        <h2 class="section-heading mb-4">
+          <span class="section-heading-upper">投稿詳細</span>
+        </h2>
+        <table>
+          <tr>
+            <th>画像</th>
+            <th>タイトル</th>
+            <th>キャンプ場</th>
+            <th>詳細</th>
+            <th>お気に入り</th>
+          </tr>
+          <tr>
+            <td><%= image_tag @post.image.url class: "post-image"%></td>
+            <td><%= @post.title %></td>
+            <td><%= @post.field_name %></td>
+            <td><%= @post.details %></td>
+            <td>
+              <% if current_user != @post.user %>
+                <div class="post-bookmark">
+                  <% if @post.bookmarked_by(current_user).blank? %>
+                    <%= link_to "お気に入りに保存", post_bookmarks_path(@post), method: :post, class: "btn btn-success btn-sm" %>
+                  <% else %>
+                    <%= link_to "保存済み", post_bookmark_path(@post,@post.bookmarked_by(current_user)), method: :delete, class: "btn btn-outline-success btn-sm" %>
+                  <% end %>
+                </div>
+              <% else %>
+                <div class="own-post">
+                  <p>自分の投稿</p>
+                </div>
+              <% end %>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="footer text-faded text-center py-5">
+  <div class="container"><p class="m-0 small">Copyright &copy; Your Website 2023</p></div>
+</footer>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>

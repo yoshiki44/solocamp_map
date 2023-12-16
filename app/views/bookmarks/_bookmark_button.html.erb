@@ -1,0 +1,3 @@
+<%= link_to bookmarks_path(post_id: @post.id), id: "js-bookmark-button-for-post-#{@post.id}", method: :post do %>
+  <%= fa_icon("star") %>
+<% end%>
